@@ -1,0 +1,67 @@
+/* Type selector */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Class selector */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  background-color: #444;
+  padding: 10px;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin-right: 15px;
+}
+
+/* Pseudo-class selector */
+.nav-menu a:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+
+/* ID selector (optional if used) */
+#main-content {
+  padding: 20px;
+}
+
+/* Layout using Flexbox */
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Other styling */
+h1, h2 {
+  color: #005a9c;
+}
+
+img {
+  border: 2px solid #ccc;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+
+th, td {
+  border: 1px solid #aaa;
+  padding: 10px;
+  text-align: left;
+}
+
+a {
+  color: #add8e6;
+  text-decoration: none;
+}

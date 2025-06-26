@@ -20,6 +20,7 @@ body {
   margin: 0;
 }
 
+/* Adds spacing between navigation links */
 .nav-menu li {
   margin-right: 15px;
 }
@@ -27,6 +28,7 @@ body {
 
 .nav-menu a:hover {
   color: red;
+  /* Link turns red on hover */
   text-decoration: underline;
 }
 
@@ -57,7 +59,9 @@ img {
 table {
   border-collapse: collapse;
   width: 100%;
+  /* Full width of the container */
   background-color: blue;
+  /* Blue background for entire table */
 }
 
 th, td {
@@ -68,5 +72,6 @@ th, td {
 
 a {
   color: #add8e6;
+  /* Light blue link color */
   text-decoration: none;
 }

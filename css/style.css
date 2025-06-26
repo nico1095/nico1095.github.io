@@ -1,17 +1,22 @@
 /* Type selector */
 body {
   font-family: Arial, sans-serif;
+  /* Sets font for text */
   margin: 0;
+  /* Removes  margin */
   background-color: #f4f4f4;
   color: #222;
+  /*  gray text shade */
 }
 
-/* Class selector */
+/* Class */
 .nav-menu {
   list-style: none;
   display: flex;
+  /* Arranges list items - row */
   background-color: #555;
   padding: 10px;
+  /*  spacing around the navigation menu */
   margin: 0;
 }
 
@@ -19,13 +24,13 @@ body {
   margin-right: 15px;
 }
 
-/* Pseudo-class selector */
+
 .nav-menu a:hover {
   color: red;
   text-decoration: underline;
 }
 
-/* ID selector (optional if used) */
+
 #main-content {
   padding: 20px;
 }
@@ -38,7 +43,7 @@ main {
   gap: 20px;
 }
 
-/* Other styling */
+/*  styling */
 h1, h2 {
   color: #005a9c;
 }

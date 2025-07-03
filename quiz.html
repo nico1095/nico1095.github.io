@@ -88,13 +88,13 @@
       <label><input type="radio" name="q3" value="c" /> Tim Berners-Lee</label><br>
     </div>
 
-    <!-- Question 4 (Fill in the blank) -->
+    <!-- Question 4
     <div class="question">
       <h3>4. Fill in the blank- The actual physical computer hardware and software which is the program that decodes requests and provides files can both be referred to as ____ .</h3>
       <input type="text" name="q4" placeholder="Your answer here" />
     </div>
 
-    <!-- Question 5 (Multiple correct answers) -->
+    <!-- Question 5  -->
     <div class="question">
       <h3>5. What are the three most popular versions of the HTTP?</h3>
       <label><input type="checkbox" name="q5" value="a" /> HTTP2</label><br>
@@ -151,7 +151,7 @@
       if (userQ5 === correctQ5) score++;
       resultHTML += `<p>5. ${q5.length > 0 ? q5.join(", ") : "No answer"} — ${userQ5 === correctQ5 ? "Correct" : "Incorrect (Answer: HTTP1.1, HTTP2, HTTP3)"}</p>`;
 
-      // Final result
+     
       resultHTML += `<h3>Total Score: ${score}/${total}</h3>`;
       resultHTML += `<p class="${score >= 3 ? "pass" : "fail"}">${score >= 3 ? "Pass ✅" : "Fail ❌"}</p>`;
 

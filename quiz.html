@@ -96,11 +96,11 @@
 
     <!-- Question 5 (Multiple correct answers) -->
     <div class="question">
-      <h3>5. Which of the following are JavaScript data types? (Select all that apply)</h3>
-      <label><input type="checkbox" name="q5" value="a" /> String</label><br>
-      <label><input type="checkbox" name="q5" value="b" /> Number</label><br>
-      <label><input type="checkbox" name="q5" value="c" /> Element</label><br>
-      <label><input type="checkbox" name="q5" value="d" /> Boolean</label><br>
+      <h3>5. What are the three most popular versions of the HTTP?</h3>
+      <label><input type="checkbox" name="q5" value="a" /> HTTP3</label><br>
+      <label><input type="checkbox" name="q5" value="b" /> HTTP1.1</label><br>
+      <label><input type="checkbox" name="q5" value="c" /> HTTP7</label><br>
+      <label><input type="checkbox" name="q5" value="d" /> HTTP3</label><br>
     </div>
 
     <button type="button" onclick="submitQuiz()">Submit Quiz</button>
@@ -149,7 +149,7 @@
       const correctQ5 = answers.q5.sort().toString();
       const userQ5 = q5.sort().toString();
       if (userQ5 === correctQ5) score++;
-      resultHTML += `<p>5. ${q5.length > 0 ? q5.join(", ") : "No answer"} — ${userQ5 === correctQ5 ? "Correct" : "Incorrect (Answer: String, Number, Boolean)"}</p>`;
+      resultHTML += `<p>5. ${q5.length > 0 ? q5.join(", ") : "No answer"} — ${userQ5 === correctQ5 ? "Correct" : "Incorrect (Answer: HTTP1.1, HTTP2, HTTP3)"}</p>`;
 
       // Final result
       resultHTML += `<h3>Total Score: ${score}/${total}</h3>`;

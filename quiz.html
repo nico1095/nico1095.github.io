@@ -120,7 +120,7 @@
         q1: "a",
         q2: "c",
         q3: "c",
-        q4: "href",
+        q4: "web servers",
         q5: ["a", "b", "d"]
       };
 
@@ -142,7 +142,7 @@
       // Question 4
       const q4 = document.querySelector('input[name="q4"]').value.trim().toLowerCase();
       if (q4 === answers.q4) score++;
-      resultHTML += `<p>4. ${q4 || "No answer"} — ${q4 === answers.q4 ? "Correct" : "Incorrect (Answer: href)"}</p>`;
+      resultHTML += `<p>4. ${q4 || "No answer"} — ${q4 === answers.q4 ? "Correct" : "Incorrect (Answer-web servers)"}</p>`;
 
       // Question 5
       const q5 = [...document.querySelectorAll('input[name="q5"]:checked')].map(cb => cb.value);

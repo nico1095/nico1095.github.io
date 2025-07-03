@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Assessment Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    form {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+      color: #34495e;
+    }
+    .result {
+      background: #ecf0f1;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .pass {
+      color: green;
+      font-weight: bold;
+    }
+    .fail {
+      color: red;
+      font-weight: bold;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      border: none;
+      background: #3498db;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Self-Assessment Quiz</h1>
+  <form id="quizForm">
+    <!-- Question 1 -->
+    <div class="question">
+      <h3>1. What does HTTP stand for?</h3>
+      <label><input type="radio" name="q1" value="a" /> HyperText Transfer Protocol</label><br>
+      <label><input type="radio" name="q1" value="b" /> Hyperlink Text Transfer Program</label><br>
+      <label><input type="radio" name="q1" value="c" /> Hyper Transfer Text Process</label><br>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+      <h3>2. Which HTML tag is used to create a hyperlink?</h3>
+      <label><input type="radio" name="q2" value="a" /> &lt;link&gt;</label><br>
+      <label><input type="radio" name="q2" value="b" /> &lt;href&gt;</label><br>
+      <label><input type="radio" name="q2" value="c" /> &lt;a&gt;</label><br>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+      <h3>3. Which CSS property controls text size?</h3>
+      <label><input type="radio" name="q3" value="a" /> font-style</label><br>
+      <label><input type="radio" name="q3" value="b" /> text-size</label><br>
+      <label><input type="radio" name="q3" value="c" /> font-size</label><br>
+    </div>
+
+    <!-- Question 4 (Fill in the blank) -->
+    <div class="question">
+      <h3>4. Fill in the blank: The ____ attribute in HTML specifies the URL of the linked page.</h3>
+      <input type="text" name="q4" placeholder="Your answer here" />
+    </div>
+
+    <!-- Question 5 (Multiple correct answers) -->
+    <div class="question">
+      <h3>5. Which of the following are JavaScript data types? (Select all that apply)</h3>
+      <label><input type="checkbox" name="q5" value="a" /> String</label><br>
+      <label><input type="checkbox" name="q5" value="b" /> Number</label><br>
+      <label><input type="checkbox" name="q5" value="c" /> Element</label><br>
+      <label><input type="checkbox" name="q5" value="d" /> Boolean</label><br>
+    </div>
+
+    <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    <button type="reset">Restart Quiz</button>
+  </form>
+
+  <div id="result" class="result" style="display:none;"></div>
+
+  <script>
+    function submitQuiz() {
+      let score = 0;
+      let total = 5;
+      let resultHTML = "<h2>Your Results</h2>";
+
+      // Answers
+      const answers = {
+        q1: "a",
+        q2: "c",
+        q3: "c",
+        q4: "href",
+        q5: ["a", "b", "d"]
+      };
+
+      // Question 1
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      if (q1 && q1.value === answers.q1) score++;
+      resultHTML += `<p>1. ${q1 ? q1.nextSibling.textContent : "No answer"} — ${q1 && q1.value === answers.q1 ? "Correct" : "Incorrect (Answer: HyperText Transfer Protocol)"}</p>`;
+
+      // Question 2
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      if (q2 && q2.value === answers.q2) score++;
+      resultHTML += `<p>2. ${q2 ? q2.nextSibling.textContent : "No answer"} — ${q2 && q2.value === answers.q2 ? "Correct" : "Incorrect (Answer: <a>)"}</p>`;
+
+      // Question 3
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      if (q3 && q3.value === answers.q3) score++;
+      resultHTML += `<p>3. ${q3 ? q3.nextSibling.textContent : "No answer"} — ${q3 && q3.value === answers.q3 ? "Correct" : "Incorrect (Answer: font-size)"}</p>`;
+
+      // Question 4
+      const q4 = document.querySelector('input[name="q4"]').value.trim().toLowerCase();
+      if (q4 === answers.q4) score++;
+      resultHTML += `<p>4. ${q4 || "No answer"} — ${q4 === answers.q4 ? "Correct" : "Incorrect (Answer: href)"}</p>`;
+
+      // Question 5
+      const q5 = [...document.querySelectorAll('input[name="q5"]:checked')].map(cb => cb.value);
+      const correctQ5 = answers.q5.sort().toString();
+      const userQ5 = q5.sort().toString();
+      if (userQ5 === correctQ5) score++;
+      resultHTML += `<p>5. ${q5.length > 0 ? q5.join(", ") : "No answer"} — ${userQ5 === correctQ5 ? "Correct" : "Incorrect (Answer: String, Number, Boolean)"}</p>`;
+
+      // Final result
+      resultHTML += `<h3>Total Score: ${score}/${total}</h3>`;
+      resultHTML += `<p class="${score >= 3 ? "pass" : "fail"}">${score >= 3 ? "Pass ✅" : "Fail ❌"}</p>`;
+
+      document.getElementById("result").innerHTML = resultHTML;
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* Reset some default browser styles */
+/* Reset styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,85 +6,81 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color: #121212; /* Dark background */
   color: #E0E0E0; /* Light text */
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
-main, section, header, footer {
-  background-color: #1E1E1E;
-  color: #F5F5F5;
+header, footer {
+  background-color: #1F1F1F;
+  text-align: center;
   padding: 20px;
   border-radius: 8px;
-  margin: 15px auto;
-  max-width: 960px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+  background-color: #2C2C2C;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+nav a {
+  color: #BB86FC;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #03DAC6;
+  color: #121212;
 }
 
 h1, h2, h3 {
   color: #FFFFFF;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-a {
-  color: #BB86FC;
-  text-decoration: none;
-  transition: color 0.3s ease;
+p {
+  margin-bottom: 15px;
 }
 
-a:hover {
-  color: #03DAC6;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  background-color: #1F1F1F;
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-nav a {
-  color: #E0E0E0;
-  padding: 8px 15px;
-  border-radius: 4px;
-}
-
-nav a:hover {
-  background-color: #333333;
-  color: #03DAC6;
-}
-
-button, .btn {
+button {
   background-color: #BB86FC;
   color: #121212;
   border: none;
-  border-radius: 4px;
-  padding: 10px 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-button:hover, .btn:hover {
+button:hover {
   background-color: #03DAC6;
   transform: scale(1.05);
 }
 
-p {
-  margin-bottom: 1rem;
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #1E1E1E;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   nav {
     flex-direction: column;
-    align-items: center;
-  }
-
-  main, section, header, footer {
-    margin: 10px;
+    gap: 10px;
   }
 }
+

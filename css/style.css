@@ -1,183 +1,90 @@
-/* Type selector */
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  /* Sets font for text */
-  margin: 0;
-  /* Removes  margin */
-  background-color: #f4f4f4;
-  color: #222;
-  /*  gray text shade */
-}
-
-/* Class */
-.nav-menu {
-  list-style: none;
-  display: flex;
-  /* Arranges list items - row */
-  background-color: #555;
-  padding: 10px;
-  /*  spacing around the navigation menu */
-  margin: 0;
-}
-
-/* Adds spacing between navigation links */
-.nav-menu li {
-  margin-right: 15px;
-}
-
-
-.nav-menu a:hover {
-  color: red;
-  /* Link turns red on hover */
-  text-decoration: underline;
-}
-
-
-#main-content {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #E0E0E0; /* Light text */
+  line-height: 1.6;
   padding: 20px;
-}
-
-/* Layout using Flexbox */
-main {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/*  styling */
-h1, h2 {
-  color: #005a9c;
-}
-
-img {
-  border: 2px solid #ccc;
-  padding: 5px;
-  margin-top: 10px;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  /* Full width of the container */
-  background-color: blue;
-  /* Blue background for entire table */
-}
-
-th, td {
-  border: 1px solid #aaa;
-  padding: 10px;
-  text-align: left;
 }
 
 a {
-  color: #add8e6;
-  /* Light blue link color */
+  color: #BB86FC; /* Soft purple links */
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/*  Desktop  */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+a:hover {
+  color: #03DAC6; /* Teal on hover */
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
+header, footer {
+  background-color: #1F1F1F;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+h1, h2, h3 {
+  color: #FFFFFF; /* Bright headings */
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+button, .btn {
+  background-color: #BB86FC;
+  color: #121212;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #03DAC6;
+  transform: scale(1.05);
 }
 
 nav {
+  background-color: #1F1F1F;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
+  justify-content: space-around;
   padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
-img, table {
-  max-width: 100%;
-  height: auto;
+nav a {
+  color: #E0E0E0;
+  font-weight: 500;
 }
 
-.quiz-form input, 
-.quiz-form button {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
+nav a:hover {
+  color: #03DAC6;
 }
 
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #1E1E1E;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
 
-
-/* Screen  Tablets  */
 @media (max-width: 768px) {
-  .container {
-    width: 90%;
-  }
-
-  nav ul {
+  nav {
     flex-direction: column;
     align-items: center;
   }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  .quiz-form input, 
-  .quiz-form button {
-    font-size: 16px;
-  }
 }
-
-/* Screen size: Phones  */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: left;
-  }
-
-  .quiz-form input, 
-  .quiz-form button {
-    font-size: 14px;
-  }
-}
-
-/* Large screens (1200px and above) */
-@media (min-width: 1200px) {
-  .container {
-    width: 70%;
-  }
-}
-
